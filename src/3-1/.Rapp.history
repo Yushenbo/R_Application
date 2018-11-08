@@ -1,0 +1,114 @@
+ls()
+help
+help()
+clear
+ls
+ls()
+ls.str()
+exit
+quit
+quit()
+setwd("/Users/shenbo/workspace/github/R_Application/src/3-1")
+dir()
+data=rbind(#
+data.frame(A="4_years", B=1, result=2.81),#
+data.frame(A="4_years", B=2, result=2.73),#
+data.frame(A="4_years", B=3, result=2.44),#
+data.frame(A="4_years", B=4, result=2.11),#
+data.frame(A="4_years", B=5, result=1.72),#
+data.frame(A="4_years", B=6, result=1.71),#
+data.frame(A="3_years", B=1, result=3.38),#
+data.frame(A="3_years", B=2, result=2.11),#
+data.frame(A="3_years", B=3, result=2.87),#
+data.frame(A="3_years", B=4, result=1.65),#
+data.frame(A="3_years", B=5, result=1.6),#
+data.frame(A="3_years", B=6, result=1.68),#
+data.frame(A="2_years", B=1, result=2.81),#
+data.frame(A="2_years", B=2, result=2.44),#
+data.frame(A="2_years", B=3, result=2.62),#
+data.frame(A="2_years", B=4, result=2.39),#
+data.frame(A="2_years", B=5, result=1.44),#
+data.frame(A="2_years", B=6, result=1.52),#
+data.frame(A="0_years", B=1, result=2.71),#
+data.frame(A="0_years", B=2, result=2.81),#
+data.frame(A="0_years", B=3, result=1.74),#
+data.frame(A="0_years", B=4, result=1.64),#
+data.frame(A="0_years", B=5, result=1.68),#
+data.frame(A="0_years", B=6, result=1.54)#
+)
+data
+clear
+ls
+ls.str()
+rm(data)
+data=rbind(#
+data.frame(A="4_years", B="1", result=2.81),#
+data.frame(A="4_years", B="2", result=2.73),#
+data.frame(A="4_years", B="3", result=2.44),#
+data.frame(A="4_years", B="4", result=2.11),#
+data.frame(A="4_years", B="5", result=1.72),#
+data.frame(A="4_years", B="6", result=1.71),#
+data.frame(A="3_years", B="1", result=3.38),#
+data.frame(A="3_years", B="2", result=2.11),#
+data.frame(A="3_years", B="3", result=2.87),#
+data.frame(A="3_years", B="4", result=1.65),#
+data.frame(A="3_years", B="5", result=1.6),#
+data.frame(A="3_years", B="6", result=1.68),#
+data.frame(A="2_years", B="1", result=2.81),#
+data.frame(A="2_years", B="2", result=2.44),#
+data.frame(A="2_years", B="3", result=2.62),#
+data.frame(A="2_years", B="4", result=2.39),#
+data.frame(A="2_years", B="5", result=1.44),#
+data.frame(A="2_years", B="6", result=1.52),#
+data.frame(A="0_years", B="1", result=2.71),#
+data.frame(A="0_years", B="2", result=2.81),#
+data.frame(A="0_years", B="3", result=1.74),#
+data.frame(A="0_years", B="4", result=1.64),#
+data.frame(A="0_years", B="5", result=1.68),#
+data.frame(A="0_years", B="6", result=1.54)#
+)
+data
+ls.str()
+aggregate(data$result, by=list(data$A), FUNC=mean)
+aggregate(data$result, by=list(data$A), FUN=mean)
+aggregate(data$result, by=list(data$B), FUN=mean)
+aggregate(data$result, by=list(data$A), FUN=sd)
+aggregate(data$result, by=list(data$B), FUN=sd)
+fit=aov(result~A, data=data)
+summary(fit)
+fit=aov(result~A+B, data=data)
+summary(fit)
+rm(data)
+data=rbind(#
+data.frame(A="4_years", B="1", result=2.81),#
+data.frame(A="4_years", B="2", result=2.73),#
+data.frame(A="4_years", B="3", result=2.44),#
+data.frame(A="4_years", B="4", result=2.11),#
+data.frame(A="4_years", B="5", result=1.72),#
+data.frame(A="4_years", B="6", result=1.71),#
+data.frame(A="3_years", B="1", result=3.38),#
+data.frame(A="3_years", B="2", result=2.11),#
+data.frame(A="3_years", B="3", result=2.87),#
+data.frame(A="3_years", B="4", result=1.65),#
+data.frame(A="3_years", B="5", result=1.6),#
+data.frame(A="3_years", B="6", result=1.68),#
+data.frame(A="2_years", B="1", result=2.81),#
+data.frame(A="2_years", B="2", result=2.44),#
+data.frame(A="2_years", B="3", result=2.62),#
+data.frame(A="2_years", B="4", result=2.39),#
+data.frame(A="2_years", B="5", result=1.44),#
+data.frame(A="2_years", B="6", result=1.52),#
+data.frame(A="0_years", B="1", result=2.71),#
+data.frame(A="0_years", B="2", result=2.81),#
+data.frame(A="0_years", B="3", result=1.74),#
+data.frame(A="0_years", B="4", result=1.64),#
+data.frame(A="0_years", B="5", result=1.68),#
+data.frame(A="0_years", B="6", result=1.54)#
+)
+data
+aggregate(data$result, by=list(data$A), FUN=mean)
+aggregate(data$result, by=list(data$A), FUN=sd)
+aggregate(data$result, by=list(data$B), FUN=mean)
+aggregate(data$result, by=list(data$B), FUN=sd)
+fit=aov(result~A+B, data=data)
+summary(fit)

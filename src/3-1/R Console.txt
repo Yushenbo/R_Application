@@ -1,0 +1,366 @@
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+[R.app GUI 1.70 (7543) x86_64-apple-darwin15.6.0]
+
+WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will work.
+Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
+[History restored from /Users/shenbo/.Rapp.history]
+
+> setwd("/Users/shenbo/workspace/github/R_Application/src/3-1")
+> 
+> dir()
+[1] "data.csv" "data.txt"
+> data=rbind(
++ data.frame(A="4_years", B=1, result=2.81),
++ data.frame(A="4_years", B=2, result=2.73),
++ data.frame(A="4_years", B=3, result=2.44),
++ data.frame(A="4_years", B=4, result=2.11),
++ data.frame(A="4_years", B=5, result=1.72),
++ data.frame(A="4_years", B=6, result=1.71),
++ data.frame(A="3_years", B=1, result=3.38),
++ data.frame(A="3_years", B=2, result=2.11),
++ data.frame(A="3_years", B=3, result=2.87),
++ data.frame(A="3_years", B=4, result=1.65),
++ data.frame(A="3_years", B=5, result=1.6),
++ data.frame(A="3_years", B=6, result=1.68),
++ data.frame(A="2_years", B=1, result=2.81),
++ data.frame(A="2_years", B=2, result=2.44),
++ data.frame(A="2_years", B=3, result=2.62),
++ data.frame(A="2_years", B=4, result=2.39),
++ data.frame(A="2_years", B=5, result=1.44),
++ data.frame(A="2_years", B=6, result=1.52),
++ data.frame(A="0_years", B=1, result=2.71),
++ data.frame(A="0_years", B=2, result=2.81),
++ data.frame(A="0_years", B=3, result=1.74),
++ data.frame(A="0_years", B=4, result=1.64),
++ data.frame(A="0_years", B=5, result=1.68),
++ data.frame(A="0_years", B=6, result=1.54)
++ )
+> data
+         A B result
+1  4_years 1   2.81
+2  4_years 2   2.73
+3  4_years 3   2.44
+4  4_years 4   2.11
+5  4_years 5   1.72
+6  4_years 6   1.71
+7  3_years 1   3.38
+8  3_years 2   2.11
+9  3_years 3   2.87
+10 3_years 4   1.65
+11 3_years 5   1.60
+12 3_years 6   1.68
+13 2_years 1   2.81
+14 2_years 2   2.44
+15 2_years 3   2.62
+16 2_years 4   2.39
+17 2_years 5   1.44
+18 2_years 6   1.52
+19 0_years 1   2.71
+20 0_years 2   2.81
+21 0_years 3   1.74
+22 0_years 4   1.64
+23 0_years 5   1.68
+24 0_years 6   1.54
+> 
+> 
+> 
+> clear
+Error: object 'clear' not found
+> ls
+function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE, 
+    pattern, sorted = TRUE) 
+{
+    if (!missing(name)) {
+        pos <- tryCatch(name, error = function(e) e)
+        if (inherits(pos, "error")) {
+            name <- substitute(name)
+            if (!is.character(name)) 
+                name <- deparse(name)
+            warning(gettextf("%s converted to character string", 
+                sQuote(name)), domain = NA)
+            pos <- name
+        }
+    }
+    all.names <- .Internal(ls(envir, all.names, sorted))
+    if (!missing(pattern)) {
+        if ((ll <- length(grep("[", pattern, fixed = TRUE))) && 
+            ll != length(grep("]", pattern, fixed = TRUE))) {
+            if (pattern == "[") {
+                pattern <- "\\["
+                warning("replaced regular expression pattern '[' by  '\\\\['")
+            }
+            else if (length(grep("[^\\\\]\\[<-", pattern))) {
+                pattern <- sub("\\[<-", "\\\\\\[<-", pattern)
+                warning("replaced '[<-' by '\\\\[<-' in regular expression pattern")
+            }
+        }
+        grep(pattern, all.names, value = TRUE)
+    }
+    else all.names
+}
+<bytecode: 0x7fc806f3c2d0>
+<environment: namespace:base>
+> ls.str()
+data : 'data.frame':	24 obs. of  3 variables:
+ $ A     : Factor w/ 4 levels "4_years","3_years",..: 1 1 1 1 1 1 2 2 2 2 ...
+ $ B     : num  1 2 3 4 5 6 1 2 3 4 ...
+ $ result: num  2.81 2.73 2.44 2.11 1.72 1.71 3.38 2.11 2.87 1.65 ...
+> 
+> 
+> 
+> rm(data)
+> 
+> 
+> 
+> data=rbind(
++ data.frame(A="4_years", B="1", result=2.81),
++ data.frame(A="4_years", B="2", result=2.73),
++ data.frame(A="4_years", B="3", result=2.44),
++ data.frame(A="4_years", B="4", result=2.11),
++ data.frame(A="4_years", B="5", result=1.72),
++ data.frame(A="4_years", B="6", result=1.71),
++ data.frame(A="3_years", B="1", result=3.38),
++ data.frame(A="3_years", B="2", result=2.11),
++ data.frame(A="3_years", B="3", result=2.87),
++ data.frame(A="3_years", B="4", result=1.65),
++ data.frame(A="3_years", B="5", result=1.6),
++ data.frame(A="3_years", B="6", result=1.68),
++ data.frame(A="2_years", B="1", result=2.81),
++ data.frame(A="2_years", B="2", result=2.44),
++ data.frame(A="2_years", B="3", result=2.62),
++ data.frame(A="2_years", B="4", result=2.39),
++ data.frame(A="2_years", B="5", result=1.44),
++ data.frame(A="2_years", B="6", result=1.52),
++ data.frame(A="0_years", B="1", result=2.71),
++ data.frame(A="0_years", B="2", result=2.81),
++ data.frame(A="0_years", B="3", result=1.74),
++ data.frame(A="0_years", B="4", result=1.64),
++ data.frame(A="0_years", B="5", result=1.68),
++ data.frame(A="0_years", B="6", result=1.54)
++ )
+> 
+> 
+> data
+         A B result
+1  4_years 1   2.81
+2  4_years 2   2.73
+3  4_years 3   2.44
+4  4_years 4   2.11
+5  4_years 5   1.72
+6  4_years 6   1.71
+7  3_years 1   3.38
+8  3_years 2   2.11
+9  3_years 3   2.87
+10 3_years 4   1.65
+11 3_years 5   1.60
+12 3_years 6   1.68
+13 2_years 1   2.81
+14 2_years 2   2.44
+15 2_years 3   2.62
+16 2_years 4   2.39
+17 2_years 5   1.44
+18 2_years 6   1.52
+19 0_years 1   2.71
+20 0_years 2   2.81
+21 0_years 3   1.74
+22 0_years 4   1.64
+23 0_years 5   1.68
+24 0_years 6   1.54
+> 
+> 
+> 
+> ls.str()
+data : 'data.frame':	24 obs. of  3 variables:
+ $ A     : Factor w/ 4 levels "4_years","3_years",..: 1 1 1 1 1 1 2 2 2 2 ...
+ $ B     : Factor w/ 6 levels "1","2","3","4",..: 1 2 3 4 5 6 1 2 3 4 ...
+ $ result: num  2.81 2.73 2.44 2.11 1.72 1.71 3.38 2.11 2.87 1.65 ...
+> 
+> 
+> 
+> aggregate(data$result, by=list(data$A), FUNC=mean)
+Error in match.fun(FUN) : argument "FUN" is missing, with no default
+> aggregate(data$result, by=list(data$A), FUN=mean)
+  Group.1        x
+1 4_years 2.253333
+2 3_years 2.215000
+3 2_years 2.203333
+4 0_years 2.020000
+> 
+> 
+> 
+> aggregate(data$result, by=list(data$B), FUN=mean)
+  Group.1      x
+1       1 2.9275
+2       2 2.5225
+3       3 2.4175
+4       4 1.9475
+5       5 1.6100
+6       6 1.6125
+> aggregate(data$result, by=list(data$A), FUN=sd)
+  Group.1         x
+1 4_years 0.4841763
+2 3_years 0.7457815
+3 2_years 0.5800230
+4 0_years 0.5777543
+> aggregate(data$result, by=list(data$B), FUN=sd)
+  Group.1          x
+1       1 0.30532769
+2       2 0.31763449
+3       3 0.48486252
+4       4 0.36754818
+5       5 0.12382784
+6       6 0.09639329
+> fit=aov(result~A, data=data)
+> summary(fit)
+            Df Sum Sq Mean Sq F value Pr(>F)
+A            3  0.195  0.0651   0.178   0.91
+Residuals   20  7.304  0.3652               
+> fit=aov(result~A+B, data=data)
+> summary(fit)
+            Df Sum Sq Mean Sq F value  Pr(>F)    
+A            3  0.195  0.0651   0.621 0.61204    
+B            5  5.733  1.1465  10.944 0.00014 ***
+Residuals   15  1.571  0.1048                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> rm(data)
+> 
+> 
+> 
+> 
+> 
+> 
+> data=rbind(
++ data.frame(A="4_years", B="1", result=2.81),
++ data.frame(A="4_years", B="2", result=2.73),
++ data.frame(A="4_years", B="3", result=2.44),
++ data.frame(A="4_years", B="4", result=2.11),
++ data.frame(A="4_years", B="5", result=1.72),
++ data.frame(A="4_years", B="6", result=1.71),
++ data.frame(A="3_years", B="1", result=3.38),
++ data.frame(A="3_years", B="2", result=2.11),
++ data.frame(A="3_years", B="3", result=2.87),
++ data.frame(A="3_years", B="4", result=1.65),
++ data.frame(A="3_years", B="5", result=1.6),
++ data.frame(A="3_years", B="6", result=1.68),
++ data.frame(A="2_years", B="1", result=2.81),
++ data.frame(A="2_years", B="2", result=2.44),
++ data.frame(A="2_years", B="3", result=2.62),
++ data.frame(A="2_years", B="4", result=2.39),
++ data.frame(A="2_years", B="5", result=1.44),
++ data.frame(A="2_years", B="6", result=1.52),
++ data.frame(A="0_years", B="1", result=2.71),
++ data.frame(A="0_years", B="2", result=2.81),
++ data.frame(A="0_years", B="3", result=1.74),
++ data.frame(A="0_years", B="4", result=1.64),
++ data.frame(A="0_years", B="5", result=1.68),
++ data.frame(A="0_years", B="6", result=1.54)
++ )
+> data
+         A B result
+1  4_years 1   2.81
+2  4_years 2   2.73
+3  4_years 3   2.44
+4  4_years 4   2.11
+5  4_years 5   1.72
+6  4_years 6   1.71
+7  3_years 1   3.38
+8  3_years 2   2.11
+9  3_years 3   2.87
+10 3_years 4   1.65
+11 3_years 5   1.60
+12 3_years 6   1.68
+13 2_years 1   2.81
+14 2_years 2   2.44
+15 2_years 3   2.62
+16 2_years 4   2.39
+17 2_years 5   1.44
+18 2_years 6   1.52
+19 0_years 1   2.71
+20 0_years 2   2.81
+21 0_years 3   1.74
+22 0_years 4   1.64
+23 0_years 5   1.68
+24 0_years 6   1.54
+> 
+> aggregate(data$result, by=list(data$A), FUN=mean)
+  Group.1        x
+1 4_years 2.253333
+2 3_years 2.215000
+3 2_years 2.203333
+4 0_years 2.020000
+> aggregate(data$result, by=list(data$A), FUN=sd)
+  Group.1         x
+1 4_years 0.4841763
+2 3_years 0.7457815
+3 2_years 0.5800230
+4 0_years 0.5777543
+> aggregate(data$result, by=list(data$B), FUN=mean)
+  Group.1      x
+1       1 2.9275
+2       2 2.5225
+3       3 2.4175
+4       4 1.9475
+5       5 1.6100
+6       6 1.6125
+> aggregate(data$result, by=list(data$B), FUN=sd)
+  Group.1          x
+1       1 0.30532769
+2       2 0.31763449
+3       3 0.48486252
+4       4 0.36754818
+5       5 0.12382784
+6       6 0.09639329
+> fit=aov(result~A+B, data=data)
+> summary(fit)
+            Df Sum Sq Mean Sq F value  Pr(>F)    
+A            3  0.195  0.0651   0.621 0.61204    
+B            5  5.733  1.1465  10.944 0.00014 ***
+Residuals   15  1.571  0.1048                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+objc[659]: Class FIFinderSyncExtensionHost is implemented in both /System/Library/PrivateFrameworks/FinderKit.framework/Versions/A/FinderKit (0x7fff9d53f1d0) and /System/Library/PrivateFrameworks/FileProvider.framework/OverrideBundles/FinderSyncCollaborationFileProviderOverride.bundle/Contents/MacOS/FinderSyncCollaborationFileProviderOverride (0x105c1ddc8). One of the two will be used. Which one is undefined.
+> 
