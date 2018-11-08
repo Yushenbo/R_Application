@@ -1,0 +1,182 @@
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+[R.app GUI 1.70 (7543) x86_64-apple-darwin15.6.0]
+
+WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will work.
+Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
+[History restored from /Users/shenbo/.Rapp.history]
+
+Empty environment, nothing to do!
+> load(".RData")
+Error in readChar(con, 5L, useBytes = TRUE) : cannot open the connection
+In addition: Warning message:
+In readChar(con, 5L, useBytes = TRUE) :
+  cannot open compressed file '.RData', probable reason 'No such file or directory'
+> setwd("~/workspace/github/R_Application/src/3-2/")
+> dir()
+[1] "data.txt"
+> data = rbind(
++ data.frame(result = 19.5, A = "A1", B = "B1"),
++ data.frame(result = 20.5, A = "A2", B = "B1"),
++ data.frame(result = 22.0, A = "A3", B = "B1"),
++ data.frame(result = 20.1, A = "A4", B = "B1"),
++ data.frame(result = 21.9, A = "A5", B = "B1"),
++ data.frame(result = 24.0, A = "A1", B = "B2"),
++ data.frame(result = 21.4, A = "A2", B = "B2"),
++ data.frame(result = 24.9, A = "A3", B = "B2"),
++ data.frame(result = 21.5, A = "A4", B = "B2"),
++ data.frame(result = 22.5, A = "A5", B = "B3"),
++ data.frame(result = 21.4, A = "A1", B = "B3"),
++ data.frame(result = 21.9, A = "A2", B = "B3"),
++ data.frame(result = 20.9, A = "A3", B = "B3"),
++ data.frame(result = 17.2, A = "A4", B = "B3"),
++ data.frame(result = 19.6, A = "A5", B = "B3")
++ )
+> 
+> data
+   result  A  B
+1    19.5 A1 B1
+2    20.5 A2 B1
+3    22.0 A3 B1
+4    20.1 A4 B1
+5    21.9 A5 B1
+6    24.0 A1 B2
+7    21.4 A2 B2
+8    24.9 A3 B2
+9    21.5 A4 B2
+10   22.5 A5 B3
+11   21.4 A1 B3
+12   21.9 A2 B3
+13   20.9 A3 B3
+14   17.2 A4 B3
+15   19.6 A5 B3
+> aggregate(data$result, by=list(data$A), FUN=mean)
+  Group.1        x
+1      A1 21.63333
+2      A2 21.26667
+3      A3 22.60000
+4      A4 19.60000
+5      A5 21.33333
+> aggregate(data$result, by=list(data$A), FUN=sd)
+  Group.1         x
+1      A1 2.2590558
+2      A2 0.7094599
+3      A3 2.0663978
+4      A4 2.1931712
+5      A5 1.5307950
+> aggregate(data$result, by=list(data$B), FUN=mean)
+  Group.1        x
+1      B1 20.80000
+2      B2 22.95000
+3      B3 20.58333
+> aggregate(data$result, by=list(data$B), FUN=sd)
+  Group.1        x
+1      B1 1.109054
+2      B2 1.771064
+3      B3 1.928125
+> fit = aov(result~A+B, data=data)
+> summary(fit)
+            Df Sum Sq Mean Sq F value Pr(>F)  
+A            4  14.08   3.519   1.665 0.2499  
+B            2  17.15   8.574   4.056 0.0608 .
+Residuals    8  16.91   2.114                 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> fit = aov(result~B+A, data=data)
+> summary(fit)
+            Df Sum Sq Mean Sq F value Pr(>F)  
+B            2  15.22   7.610   3.600 0.0767 .
+A            4  16.01   4.002   1.893 0.2051  
+Residuals    8  16.91   2.114                 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> data = rbind(
++ data.frame(result = 19.5, A = "A1", B = "B1"),
++ data.frame(result = 20.5, A = "A2", B = "B1"),
++ data.frame(result = 22.0, A = "A3", B = "B1"),
++ data.frame(result = 20.1, A = "A4", B = "B1"),
++ data.frame(result = 21.9, A = "A5", B = "B1"),
++ data.frame(result = 24.0, A = "A1", B = "B2"),
++ data.frame(result = 21.4, A = "A2", B = "B2"),
++ data.frame(result = 24.9, A = "A3", B = "B2"),
++ data.frame(result = 21.5, A = "A4", B = "B2"),
++ data.frame(result = 22.5, A = "A5", B = "B2"),
++ data.frame(result = 21.4, A = "A1", B = "B3"),
++ data.frame(result = 21.9, A = "A2", B = "B3"),
++ data.frame(result = 20.9, A = "A3", B = "B3"),
++ data.frame(result = 17.2, A = "A4", B = "B3"),
++ data.frame(result = 19.6, A = "A5", B = "B3")
++ )
+> data
+   result  A  B
+1    19.5 A1 B1
+2    20.5 A2 B1
+3    22.0 A3 B1
+4    20.1 A4 B1
+5    21.9 A5 B1
+6    24.0 A1 B2
+7    21.4 A2 B2
+8    24.9 A3 B2
+9    21.5 A4 B2
+10   22.5 A5 B2
+11   21.4 A1 B3
+12   21.9 A2 B3
+13   20.9 A3 B3
+14   17.2 A4 B3
+15   19.6 A5 B3
+> aggregate(data$result, by=list(data$A), FUN=mean)
+  Group.1        x
+1      A1 21.63333
+2      A2 21.26667
+3      A3 22.60000
+4      A4 19.60000
+5      A5 21.33333
+> aggregate(data$result, by=list(data$A), FUN=sd)
+  Group.1         x
+1      A1 2.2590558
+2      A2 0.7094599
+3      A3 2.0663978
+4      A4 2.1931712
+5      A5 1.5307950
+> aggregate(data$result, by=list(data$B), FUN=mean)
+  Group.1     x
+1      B1 20.80
+2      B2 22.86
+3      B3 20.20
+> aggregate(data$result, by=list(data$B), FUN=sd)
+  Group.1        x
+1      B1 1.109054
+2      B2 1.546932
+3      B3 1.882817
+> fit = aov(result~A+B, data=data)
+> summary(fit)
+            Df Sum Sq Mean Sq F value Pr(>F)  
+A            4  14.08   3.519   1.929 0.1990  
+B            2  19.46   9.733   5.335 0.0337 *
+Residuals    8  14.60   1.824                 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> 
