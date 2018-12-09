@@ -1,0 +1,632 @@
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+[R.app GUI 1.70 (7543) x86_64-apple-darwin15.6.0]
+
+WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will work.
+Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
+[History restored from /Users/shenbo/.Rapp.history]
+
+> setwd("~/workspace/github/R_Application/src/3-3/01/")
+> dir()
+[1] "data.txt"
+> data = rbind(
++ data.frame(result = 15.1, A = "A_yj", B = "B1"))
+> 
+> 
+> data
+  result    A  B
+1   15.1 A_yj B1
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> data = rbind(
++ data.frame(result = 15.1, A = "A_yj", B = "B1"),
++ data.frame(result = 16.4, A = "A_dx", B = "B1"),
++ data.frame(result = 15.0, A = "A_ay", B = "B1"),
++ data.frame(result = 14.9, A = "A_sc", B = "B1"),
++ data.frame(result = 20.2, A = "A_cw", B = "B1"),
++ data.frame(result = 16.5, A = "A_ja", B = "B1"),
++ data.frame(result = 15.1, A = "A_qj", B = "B1"),
++ data.frame(result = 12.9, A = "A_cj", B = "B1"),
++ data.frame(result = 15.8, A = "A_zx", B = "B1"),
++ data.frame(result = 14.5, A = "A_pz", B = "B1"),
++ data.frame(result = 17.2, A = "A_dz", B = "B1"),
++ data.frame(result = 17.1, A = "A_yj", B = "B2"),
++ data.frame(result = 19.4, A = "A_dx", B = "B2"),
++ data.frame(result = 22.1, A = "A_ay", B = "B2"),
++ data.frame(result = 22.3, A = "A_sc", B = "B2"),
++ data.frame(result = 18.1, A = "A_cw", B = "B2"),
++ data.frame(result = 19.5, A = "A_ja", B = "B2"),
++ data.frame(result = 18.0, A = "A_qj", B = "B2"),
++ data.frame(result = 14.7, A = "A_cj", B = "B2"),
++ data.frame(result = 20.8, A = "A_zx", B = "B2"),
++ data.frame(result = 20.4, A = "A_pz", B = "B2"),
++ data.frame(result = 22.5, A = "A_dz", B = "B2"),
++ data.frame(result = 9.3, A = "A_yj", B = "B3"),
++ data.frame(result = 16.5, A = "A_dx", B = "B3"),
++ data.frame(result = 20.1, A = "A_ay", B = "B3"),
++ data.frame(result = 16.9, A = "A_sc", B = "B3"),
++ data.frame(result = 18.1, A = "A_cw", B = "B3"),
++ data.frame(result = 19.9, A = "A_ja", B = "B3"),
++ data.frame(result = 15.8, A = "A_qj", B = "B3"),
++ data.frame(result = 13.3, A = "A_cj", B = "B3"),
++ data.frame(result = 14.6, A = "A_zx", B = "B3"),
++ data.frame(result = 13.2, A = "A_pz", B = "B3"),
++ data.frame(result = 23.4, A = "A_dz", B = "B3"),
++ data.frame(result = 16.5, A = "A_yj", B = "B4"),
++ data.frame(result = 18.4, A = "A_dx", B = "B4"),
++ data.frame(result = 18.8, A = "A_ay", B = "B4"),
++ data.frame(result = 15.6, A = "A_sc", B = "B4"),
++ data.frame(result = 19.6, A = "A_cw", B = "B4"),
++ data.frame(result = 21.1, A = "A_ja", B = "B4"),
++ data.frame(result = 18.7, A = "A_qj", B = "B4"),
++ data.frame(result = 18.7, A = "A_cj", B = "B4"),
++ data.frame(result = 19.5, A = "A_zx", B = "B4"),
++ data.frame(result = 18.8, A = "A_pz", B = "B4"),
++ data.frame(result = 16.2, A = "A_dz", B = "B4"),
++ data.frame(result = 17.2, A = "A_yj", B = "B5"),
++ data.frame(result = 11.5, A = "A_dx", B = "B5"),
++ data.frame(result = 15.4, A = "A_ay", B = "B5"),
++ data.frame(result = 19.0, A = "A_sc", B = "B5"),
++ data.frame(result = 20.6, A = "A_cw", B = "B5"),
++ data.frame(result = 16.2, A = "A_ja", B = "B5"),
++ data.frame(result = 16.9, A = "A_qj", B = "B5"),
++ data.frame(result = 15.8, A = "A_cj", B = "B5"),
++ data.frame(result = 14.8, A = "A_zx", B = "B5"),
++ data.frame(result = 13.6, A = "A_pz", B = "B5"),
++ data.frame(result = 18.4, A = "A_dz", B = "B5")
++ )
+> data
+   result    A  B
+1    15.1 A_yj B1
+2    16.4 A_dx B1
+3    15.0 A_ay B1
+4    14.9 A_sc B1
+5    20.2 A_cw B1
+6    16.5 A_ja B1
+7    15.1 A_qj B1
+8    12.9 A_cj B1
+9    15.8 A_zx B1
+10   14.5 A_pz B1
+11   17.2 A_dz B1
+12   17.1 A_yj B2
+13   19.4 A_dx B2
+14   22.1 A_ay B2
+15   22.3 A_sc B2
+16   18.1 A_cw B2
+17   19.5 A_ja B2
+18   18.0 A_qj B2
+19   14.7 A_cj B2
+20   20.8 A_zx B2
+21   20.4 A_pz B2
+22   22.5 A_dz B2
+23    9.3 A_yj B3
+24   16.5 A_dx B3
+25   20.1 A_ay B3
+26   16.9 A_sc B3
+27   18.1 A_cw B3
+28   19.9 A_ja B3
+29   15.8 A_qj B3
+30   13.3 A_cj B3
+31   14.6 A_zx B3
+32   13.2 A_pz B3
+33   23.4 A_dz B3
+34   16.5 A_yj B4
+35   18.4 A_dx B4
+36   18.8 A_ay B4
+37   15.6 A_sc B4
+38   19.6 A_cw B4
+39   21.1 A_ja B4
+40   18.7 A_qj B4
+41   18.7 A_cj B4
+42   19.5 A_zx B4
+43   18.8 A_pz B4
+44   16.2 A_dz B4
+45   17.2 A_yj B5
+46   11.5 A_dx B5
+47   15.4 A_ay B5
+48   19.0 A_sc B5
+49   20.6 A_cw B5
+50   16.2 A_ja B5
+51   16.9 A_qj B5
+52   15.8 A_cj B5
+53   14.8 A_zx B5
+54   13.6 A_pz B5
+55   18.4 A_dz B5
+> ls()
+[1] "data"
+> ls.str()
+data : 'data.frame':	55 obs. of  3 variables:
+ $ result: num  15.1 16.4 15 14.9 20.2 16.5 15.1 12.9 15.8 14.5 ...
+ $ A     : Factor w/ 11 levels "A_yj","A_dx",..: 1 2 3 4 5 6 7 8 9 10 ...
+ $ B     : Factor w/ 5 levels "B1","B2","B3",..: 1 1 1 1 1 1 1 1 1 1 ...
+> 
+> 
+> fit = aov(result~A+B, data=data)
+> 
+> summary(fit)
+            Df Sum Sq Mean Sq F value  Pr(>F)   
+A           10  122.3  12.231   2.274 0.03223 * 
+B            4  111.1  27.772   5.164 0.00189 **
+Residuals   40  215.1   5.378                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> fit = aov(result~B+A, data=data)
+> summary(fit)
+            Df Sum Sq Mean Sq F value  Pr(>F)   
+B            4  111.1  27.772   5.164 0.00189 **
+A           10  122.3  12.231   2.274 0.03223 * 
+Residuals   40  215.1   5.378                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> fit = aov(result~A+B, data=data)
+> 
+> data = rbind(
++ data.frame(result = 15.1, A = "A_yj", B = "B1"),
++ data.frame(result = 16.4, A = "A_dx", B = "B1"),
++ data.frame(result = 15.0, A = "A_ay", B = "B1"),
++ data.frame(result = 14.9, A = "A_sc", B = "B1"),
++ data.frame(result = 20.2, A = "A_cw", B = "B1"),
++ data.frame(result = 16.5, A = "A_ja", B = "B1"),
++ data.frame(result = 15.1, A = "A_qj", B = "B1"),
++ data.frame(result = 12.9, A = "A_cj", B = "B1"),
++ data.frame(result = 15.8, A = "A_zx", B = "B1"),
++ data.frame(result = 14.5, A = "A_pz", B = "B1"),
++ data.frame(result = 17.2, A = "A_dz", B = "B1"),
++ data.frame(result = 17.1, A = "A_yj", B = "B2"),
++ data.frame(result = 19.4, A = "A_dx", B = "B2"),
++ data.frame(result = 22.1, A = "A_ay", B = "B2"),
++ data.frame(result = 22.3, A = "A_sc", B = "B2"),
++ data.frame(result = 18.1, A = "A_cw", B = "B2"),
++ data.frame(result = 19.5, A = "A_ja", B = "B2"),
++ data.frame(result = 18.0, A = "A_qj", B = "B2"),
++ data.frame(result = 14.7, A = "A_cj", B = "B2"),
++ data.frame(result = 20.8, A = "A_zx", B = "B2"),
++ data.frame(result = 20.4, A = "A_pz", B = "B2"),
++ data.frame(result = 22.5, A = "A_dz", B = "B2"),
++ data.frame(result = 9.3, A = "A_yj", B = "B3"),
++ data.frame(result = 16.5, A = "A_dx", B = "B3"),
++ data.frame(result = 20.1, A = "A_ay", B = "B3"),
++ data.frame(result = 16.9, A = "A_sc", B = "B3"),
++ data.frame(result = 18.1, A = "A_cw", B = "B3"),
++ data.frame(result = 19.9, A = "A_ja", B = "B3"),
++ data.frame(result = 15.8, A = "A_qj", B = "B3"),
++ data.frame(result = 13.3, A = "A_cj", B = "B3"),
++ data.frame(result = 14.6, A = "A_zx", B = "B3"),
++ data.frame(result = 13.2, A = "A_pz", B = "B3"),
++ data.frame(result = 13.4, A = "A_dz", B = "B3"),
++ data.frame(result = 16.5, A = "A_yj", B = "B4"),
++ data.frame(result = 18.4, A = "A_dx", B = "B4"),
++ data.frame(result = 18.8, A = "A_ay", B = "B4"),
++ data.frame(result = 15.6, A = "A_sc", B = "B4"),
++ data.frame(result = 19.6, A = "A_cw", B = "B4"),
++ data.frame(result = 21.1, A = "A_ja", B = "B4"),
++ data.frame(result = 18.7, A = "A_qj", B = "B4"),
++ data.frame(result = 18.7, A = "A_cj", B = "B4"),
++ data.frame(result = 19.5, A = "A_zx", B = "B4"),
++ data.frame(result = 18.8, A = "A_pz", B = "B4"),
++ data.frame(result = 16.2, A = "A_dz", B = "B4"),
++ data.frame(result = 17.2, A = "A_yj", B = "B5"),
++ data.frame(result = 11.5, A = "A_dx", B = "B5"),
++ data.frame(result = 15.4, A = "A_ay", B = "B5"),
++ data.frame(result = 19.0, A = "A_sc", B = "B5"),
++ data.frame(result = 20.6, A = "A_cw", B = "B5"),
++ data.frame(result = 16.2, A = "A_ja", B = "B5"),
++ data.frame(result = 16.9, A = "A_qj", B = "B5"),
++ data.frame(result = 15.8, A = "A_cj", B = "B5"),
++ data.frame(result = 14.8, A = "A_zx", B = "B5"),
++ data.frame(result = 13.6, A = "A_pz", B = "B5"),
++ data.frame(result = 18.4, A = "A_dz", B = "B5")
++ )
+> fit = aov(result~B+A, data=data)
+> summary(fit)
+            Df Sum Sq Mean Sq F value   Pr(>F)    
+B            4 134.87   33.72   6.947 0.000241 ***
+A           10  95.47    9.55   1.967 0.063825 .  
+Residuals   40 194.13    4.85                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> fit = aov(result~B+A, data=data)
+> summary(fit)
+            Df Sum Sq Mean Sq F value   Pr(>F)    
+B            4 134.87   33.72   6.947 0.000241 ***
+A           10  95.47    9.55   1.967 0.063825 .  
+Residuals   40 194.13    4.85                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> 
+> 
+> aggregate(data$result, by=list(data$A_ay), FUN=mean)
+Error in aggregate.data.frame(as.data.frame(x), ...) : 
+  arguments must have same length
+> data
+   result    A  B
+1    15.1 A_yj B1
+2    16.4 A_dx B1
+3    15.0 A_ay B1
+4    14.9 A_sc B1
+5    20.2 A_cw B1
+6    16.5 A_ja B1
+7    15.1 A_qj B1
+8    12.9 A_cj B1
+9    15.8 A_zx B1
+10   14.5 A_pz B1
+11   17.2 A_dz B1
+12   17.1 A_yj B2
+13   19.4 A_dx B2
+14   22.1 A_ay B2
+15   22.3 A_sc B2
+16   18.1 A_cw B2
+17   19.5 A_ja B2
+18   18.0 A_qj B2
+19   14.7 A_cj B2
+20   20.8 A_zx B2
+21   20.4 A_pz B2
+22   22.5 A_dz B2
+23    9.3 A_yj B3
+24   16.5 A_dx B3
+25   20.1 A_ay B3
+26   16.9 A_sc B3
+27   18.1 A_cw B3
+28   19.9 A_ja B3
+29   15.8 A_qj B3
+30   13.3 A_cj B3
+31   14.6 A_zx B3
+32   13.2 A_pz B3
+33   13.4 A_dz B3
+34   16.5 A_yj B4
+35   18.4 A_dx B4
+36   18.8 A_ay B4
+37   15.6 A_sc B4
+38   19.6 A_cw B4
+39   21.1 A_ja B4
+40   18.7 A_qj B4
+41   18.7 A_cj B4
+42   19.5 A_zx B4
+43   18.8 A_pz B4
+44   16.2 A_dz B4
+45   17.2 A_yj B5
+46   11.5 A_dx B5
+47   15.4 A_ay B5
+48   19.0 A_sc B5
+49   20.6 A_cw B5
+50   16.2 A_ja B5
+51   16.9 A_qj B5
+52   15.8 A_cj B5
+53   14.8 A_zx B5
+54   13.6 A_pz B5
+55   18.4 A_dz B5
+> aggregate(data$result, by=list(data$B2), FUN=mean)
+Error in aggregate.data.frame(as.data.frame(x), ...) : 
+  arguments must have same length
+> aggregate(data$result, by=list(data$B2), FUN=sd)
+Error in aggregate.data.frame(as.data.frame(x), ...) : 
+  arguments must have same length
+> data
+   result    A  B
+1    15.1 A_yj B1
+2    16.4 A_dx B1
+3    15.0 A_ay B1
+4    14.9 A_sc B1
+5    20.2 A_cw B1
+6    16.5 A_ja B1
+7    15.1 A_qj B1
+8    12.9 A_cj B1
+9    15.8 A_zx B1
+10   14.5 A_pz B1
+11   17.2 A_dz B1
+12   17.1 A_yj B2
+13   19.4 A_dx B2
+14   22.1 A_ay B2
+15   22.3 A_sc B2
+16   18.1 A_cw B2
+17   19.5 A_ja B2
+18   18.0 A_qj B2
+19   14.7 A_cj B2
+20   20.8 A_zx B2
+21   20.4 A_pz B2
+22   22.5 A_dz B2
+23    9.3 A_yj B3
+24   16.5 A_dx B3
+25   20.1 A_ay B3
+26   16.9 A_sc B3
+27   18.1 A_cw B3
+28   19.9 A_ja B3
+29   15.8 A_qj B3
+30   13.3 A_cj B3
+31   14.6 A_zx B3
+32   13.2 A_pz B3
+33   13.4 A_dz B3
+34   16.5 A_yj B4
+35   18.4 A_dx B4
+36   18.8 A_ay B4
+37   15.6 A_sc B4
+38   19.6 A_cw B4
+39   21.1 A_ja B4
+40   18.7 A_qj B4
+41   18.7 A_cj B4
+42   19.5 A_zx B4
+43   18.8 A_pz B4
+44   16.2 A_dz B4
+45   17.2 A_yj B5
+46   11.5 A_dx B5
+47   15.4 A_ay B5
+48   19.0 A_sc B5
+49   20.6 A_cw B5
+50   16.2 A_ja B5
+51   16.9 A_qj B5
+52   15.8 A_cj B5
+53   14.8 A_zx B5
+54   13.6 A_pz B5
+55   18.4 A_dz B5
+> aggregate(data=data$result, by=list(data$A_ay), FUN=mean)
+Error in is.ts(x) : argument "x" is missing, with no default
+> aggregate(data=data$result, by=list(data$B@), FUN=mean)
+Error: unexpected ')' in "aggregate(data=data$result, by=list(data$B@)"
+> aggregate(data=data$result, by=list(data$B2), FUN=mean)
+Error in is.ts(x) : argument "x" is missing, with no default
+> data$result
+ [1] 15.1 16.4 15.0 14.9 20.2 16.5 15.1 12.9 15.8 14.5 17.2 17.1 19.4 22.1 22.3 18.1 19.5 18.0 14.7 20.8 20.4 22.5  9.3 16.5 20.1 16.9 18.1 19.9 15.8 13.3 14.6 13.2 13.4 16.5 18.4 18.8 15.6 19.6 21.1 18.7 18.7
+[42] 19.5 18.8 16.2 17.2 11.5 15.4 19.0 20.6 16.2 16.9 15.8 14.8 13.6 18.4
+> data$A_ay
+NULL
+> data$A
+ [1] A_yj A_dx A_ay A_sc A_cw A_ja A_qj A_cj A_zx A_pz A_dz A_yj A_dx A_ay A_sc A_cw A_ja A_qj A_cj A_zx A_pz A_dz A_yj A_dx A_ay A_sc A_cw A_ja A_qj A_cj A_zx A_pz A_dz A_yj A_dx A_ay A_sc A_cw A_ja A_qj A_cj
+[42] A_zx A_pz A_dz A_yj A_dx A_ay A_sc A_cw A_ja A_qj A_cj A_zx A_pz A_dz
+Levels: A_yj A_dx A_ay A_sc A_cw A_ja A_qj A_cj A_zx A_pz A_dz
+> aggregate(data=data$result, by=list(data$A), FUN=mean)
+Error in is.ts(x) : argument "x" is missing, with no default
+> aggregate(data$result, by=list(data$A), FUN=mean)
+   Group.1     x
+1     A_yj 15.04
+2     A_dx 16.44
+3     A_ay 18.28
+4     A_sc 17.74
+5     A_cw 19.32
+6     A_ja 18.64
+7     A_qj 16.90
+8     A_cj 15.08
+9     A_zx 17.10
+10    A_pz 16.10
+11    A_dz 17.54
+> 
+> 
+> dir()
+[1] "R Console.txt" "data.txt"     
+> 
+> 
+> 
+> setwd("~/workspace/github/R_Application/src/3-3/02/")
+> 
+> 
+> dir()
+[1] "data.txt"
+> 
+> 
+> ls
+function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE, 
+    pattern, sorted = TRUE) 
+{
+    if (!missing(name)) {
+        pos <- tryCatch(name, error = function(e) e)
+        if (inherits(pos, "error")) {
+            name <- substitute(name)
+            if (!is.character(name)) 
+                name <- deparse(name)
+            warning(gettextf("%s converted to character string", 
+                sQuote(name)), domain = NA)
+            pos <- name
+        }
+    }
+    all.names <- .Internal(ls(envir, all.names, sorted))
+    if (!missing(pattern)) {
+        if ((ll <- length(grep("[", pattern, fixed = TRUE))) && 
+            ll != length(grep("]", pattern, fixed = TRUE))) {
+            if (pattern == "[") {
+                pattern <- "\\["
+                warning("replaced regular expression pattern '[' by  '\\\\['")
+            }
+            else if (length(grep("[^\\\\]\\[<-", pattern))) {
+                pattern <- sub("\\[<-", "\\\\\\[<-", pattern)
+                warning("replaced '[<-' by '\\\\[<-' in regular expression pattern")
+            }
+        }
+        grep(pattern, all.names, value = TRUE)
+    }
+    else all.names
+}
+<bytecode: 0x7f9ca4e74ad0>
+<environment: namespace:base>
+> ls()
+[1] "data" "fit" 
+> 
+> 
+> 
+> 
+> 
+> rm(data)
+> 
+> 
+> rm(fit)
+> 
+> 
+> 
+> ls.str()
+> 
+> 
+> 
+> clear
+Error: object 'clear' not found
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> data = rbind(
++ data.frame(result = 15.1, A = "A01", B = "B1"),
++ data.frame(result = 16.4, A = "A02", B = "B1"),
++ data.frame(result = 15.0, A = "A03", B = "B1"),
++ data.frame(result = 14.9, A = "A04", B = "B1"),
++ data.frame(result = 20.2, A = "A05", B = "B1"),
++ data.frame(result = 16.5, A = "A06", B = "B1"),
++ data.frame(result = 15.1, A = "A07", B = "B1"),
++ data.frame(result = 12.9, A = "A08", B = "B1"),
++ data.frame(result = 15.8, A = "A09", B = "B1"),
++ data.frame(result = 14.5, A = "A10", B = "B1"),
++ data.frame(result = 17.2, A = "A11", B = "B1"),
++ 
++ data.frame(result = 17.1, A = "A01", B = "B2"),
++ data.frame(result = 19.4, A = "A02", B = "B2"),
++ data.frame(result = 18.3, A = "A03", B = "B2"),
++ data.frame(result = 22.3, A = "A04", B = "B2"),
++ data.frame(result = 18.1, A = "A05", B = "B2"),
++ data.frame(result = 19.5, A = "A06", B = "B2"),
++ data.frame(result = 18.0, A = "A07", B = "B2"),
++ data.frame(result = 14.7, A = "A08", B = "B2"),
++ data.frame(result = 20.8, A = "A09", B = "B2"),
++ data.frame(result = 20.4, A = "A10", B = "B2"),
++ data.frame(result = 22.5, A = "A11", B = "B2"),
++ 
++ data.frame(result = 9.3, A = "A01", B = "B3"),
++ data.frame(result = 16.5, A = "A02", B = "B3"),
++ data.frame(result = 20.1, A = "A03", B = "B3"),
++ data.frame(result = 16.9, A = "A04", B = "B3"),
++ data.frame(result = 18.1, A = "A05", B = "B3"),
++ data.frame(result = 19.9, A = "A06", B = "B3"),
++ data.frame(result = 15.8, A = "A07", B = "B3"),
++ data.frame(result = 13.3, A = "A08", B = "B3"),
++ data.frame(result = 14.6, A = "A09", B = "B3"),
++ data.frame(result = 13.2, A = "A10", B = "B3"),
++ data.frame(result = 13.4, A = "A11", B = "B3"),
++ 
++ data.frame(result = 16.5, A = "A01", B = "B4"),
++ data.frame(result = 18.4, A = "A02", B = "B4"),
++ data.frame(result = 18.8, A = "A03", B = "B4"),
++ data.frame(result = 15.6, A = "A04", B = "B4"),
++ data.frame(result = 19.6, A = "A05", B = "B4"),
++ data.frame(result = 21.1, A = "A06", B = "B4"),
++ data.frame(result = 18.7, A = "A07", B = "B4"),
++ data.frame(result = 18.7, A = "A08", B = "B4"),
++ data.frame(result = 19.5, A = "A09", B = "B4"),
++ data.frame(result = 18.8, A = "A10", B = "B4"),
++ data.frame(result = 16.2, A = "A11", B = "B4"),
++ 
++ data.frame(result = 17.2, A = "A01", B = "B5"),
++ data.frame(result = 11.5, A = "A02", B = "B5"),
++ data.frame(result = 15.4, A = "A03", B = "B5"),
++ data.frame(result = 19.0, A = "A04", B = "B5"),
++ data.frame(result = 20.6, A = "A05", B = "B5"),
++ data.frame(result = 16.2, A = "A06", B = "B5"),
++ data.frame(result = 16.9, A = "A07", B = "B5"),
++ data.frame(result = 15.8, A = "A08", B = "B5"),
++ data.frame(result = 14.8, A = "A09", B = "B5"),
++ data.frame(result = 13.6, A = "A10", B = "B5"),
++ data.frame(result = 18.4, A = "A11", B = "B5")
++ )
+> data
+   result   A  B
+1    15.1 A01 B1
+2    16.4 A02 B1
+3    15.0 A03 B1
+4    14.9 A04 B1
+5    20.2 A05 B1
+6    16.5 A06 B1
+7    15.1 A07 B1
+8    12.9 A08 B1
+9    15.8 A09 B1
+10   14.5 A10 B1
+11   17.2 A11 B1
+12   17.1 A01 B2
+13   19.4 A02 B2
+14   18.3 A03 B2
+15   22.3 A04 B2
+16   18.1 A05 B2
+17   19.5 A06 B2
+18   18.0 A07 B2
+19   14.7 A08 B2
+20   20.8 A09 B2
+21   20.4 A10 B2
+22   22.5 A11 B2
+23    9.3 A01 B3
+24   16.5 A02 B3
+25   20.1 A03 B3
+26   16.9 A04 B3
+27   18.1 A05 B3
+28   19.9 A06 B3
+29   15.8 A07 B3
+30   13.3 A08 B3
+31   14.6 A09 B3
+32   13.2 A10 B3
+33   13.4 A11 B3
+34   16.5 A01 B4
+35   18.4 A02 B4
+36   18.8 A03 B4
+37   15.6 A04 B4
+38   19.6 A05 B4
+39   21.1 A06 B4
+40   18.7 A07 B4
+41   18.7 A08 B4
+42   19.5 A09 B4
+43   18.8 A10 B4
+44   16.2 A11 B4
+45   17.2 A01 B5
+46   11.5 A02 B5
+47   15.4 A03 B5
+48   19.0 A04 B5
+49   20.6 A05 B5
+50   16.2 A06 B5
+51   16.9 A07 B5
+52   15.8 A08 B5
+53   14.8 A09 B5
+54   13.6 A10 B5
+55   18.4 A11 B5
+> fit = aov(data$result~A+B, data=data)
+> summary(fit)
+            Df Sum Sq Mean Sq F value   Pr(>F)    
+A           10  89.19   8.919   1.838 0.084778 .  
+B            4 117.46  29.365   6.053 0.000662 ***
+Residuals   40 194.06   4.852                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> 

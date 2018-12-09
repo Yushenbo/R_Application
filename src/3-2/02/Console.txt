@@ -1,0 +1,86 @@
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+[R.app GUI 1.70 (7543) x86_64-apple-darwin15.6.0]
+
+WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will work.
+Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
+[History restored from /Users/shenbo/.Rapp.history]
+
+> setwd("~/workspace/github/R_Application/src/3-2/02/")
+> ls()
+character(0)
+> dir()
+[1] "data.txt"
+> data = rbind(
++ data.frame(result = 19.5, A = "A1", B = "B1"),
++ data.frame(result = 20.5, A = "A2", B = "B1"),
++ data.frame(result = 22.0, A = "A3", B = "B1"),
++ data.frame(result = 20.1, A = "A4", B = "B1"),
++ data.frame(result = 21.9, A = "A5", B = "B1"),
++ data.frame(result = 24.0, A = "A1", B = "B2"),
++ data.frame(result = 21.2, A = "A2", B = "B2"),
++ data.frame(result = 24.9, A = "A3", B = "B2"),
++ data.frame(result = 21.5, A = "A4", B = "B2"),
++ data.frame(result = 22.5, A = "A5", B = "B2"),
++ data.frame(result = 21.4, A = "A1", B = "B3"),
++ data.frame(result = 21.9, A = "A2", B = "B3"),
++ data.frame(result = 20.9, A = "A3", B = "B3"),
++ data.frame(result = 17.2, A = "A4", B = "B3"),
++ data.frame(result = 19.6, A = "A5", B = "B3")
++ )
+> 
+> 
+> 
+> data
+   result  A  B
+1    19.5 A1 B1
+2    20.5 A2 B1
+3    22.0 A3 B1
+4    20.1 A4 B1
+5    21.9 A5 B1
+6    24.0 A1 B2
+7    21.2 A2 B2
+8    24.9 A3 B2
+9    21.5 A4 B2
+10   22.5 A5 B2
+11   21.4 A1 B3
+12   21.9 A2 B3
+13   20.9 A3 B3
+14   17.2 A4 B3
+15   19.6 A5 B3
+> 
+> 
+> 
+> fit = aov(result~A+B, data = data)
+> 
+> summary(fit)
+            Df Sum Sq Mean Sq F value Pr(>F)  
+A            4  14.10   3.524   1.856 0.2118  
+B            2  18.84   9.421   4.961 0.0397 *
+Residuals    8  15.19   1.899                 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> 
