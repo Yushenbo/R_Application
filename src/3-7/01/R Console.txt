@@ -1,0 +1,489 @@
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+[R.app GUI 1.70 (7543) x86_64-apple-darwin15.6.0]
+
+WARNING: You're using a non-UTF8 locale, therefore only ASCII characters will work.
+Please read R for Mac OS X FAQ (see Help) section 9 and adjust your system preferences accordingly.
+[History restored from /Users/shenbo/.Rapp.history]
+
+> setwd("/Users/shenbo/workspace/github/R_Application/src/3-4/01")
+> ls()
+character(0)
+> dir()
+[1] "data.txt"
+> data = rbind(
++ data.frame(result = 42, A = "b", B = "B1"),
++ data.frame(result = 54, A = "c", B = "B1"),
++ data.frame(result = 4, A = "d", B = "B1"),
++ data.frame(result = 15, A = "a", B = "B1"),
++ data.frame(result = 13, A = "e", B = "B1"),
++ data.frame(result = 18, A = "d", B = "B2"),
++ data.frame(result = 4, A = "e", B = "B2"),
++ data.frame(result = 5, A = "c", B = "B2"),
++ data.frame(result = 16, A = "b", B = "B2"),
++ data.frame(result = 33, A = "a", B = "B2"),
++ data.frame(result = 30, A = "e", B = "B3"),
++ data.frame(result = 3, A = "a", B = "B3"),
++ data.frame(result = 2, A = "b", B = "B3"),
++ data.frame(result = 9, A = "c", B = "B3"),
++ data.frame(result = 16, A = "d", B = "B3"),
++ data.frame(result = 6, A = "a", B = "B4"),
++ data.frame(result = 6, A = "b", B = "B4"),
++ data.frame(result = 12, A = "e", B = "B4"),
++ data.frame(result = 14, A = "d", B = "B4"),
++ data.frame(result = 34, A = "c", B = "B4"),
++ data.frame(result = 20, A = "c", B = "B5"),
++ data.frame(result = 18, A = "d", B = "B5"),
++ data.frame(result = 53, A = "a", B = "B5"),
++ data.frame(result = 33, A = "e", B = "B5"),
++ data.frame(result = 17, A = "b", B = "B5")
++ )
+> ls.str()
+data : 'data.frame':	25 obs. of  3 variables:
+ $ result: num  42 54 4 15 13 18 4 5 16 33 ...
+ $ A     : Factor w/ 5 levels "b","c","d","a",..: 1 2 3 4 5 3 5 2 1 4 ...
+ $ B     : Factor w/ 5 levels "B1","B2","B3",..: 1 1 1 1 1 2 2 2 2 2 ...
+> data
+   result A  B
+1      42 b B1
+2      54 c B1
+3       4 d B1
+4      15 a B1
+5      13 e B1
+6      18 d B2
+7       4 e B2
+8       5 c B2
+9      16 b B2
+10     33 a B2
+11     30 e B3
+12      3 a B3
+13      2 b B3
+14      9 c B3
+15     16 d B3
+16      6 a B4
+17      6 b B4
+18     12 e B4
+19     14 d B4
+20     34 c B4
+21     20 c B5
+22     18 d B5
+23     53 a B5
+24     33 e B5
+25     17 b B5
+> 
+> fit = aov(result~B+A, data=data)
+> summary(fit)
+            Df Sum Sq Mean Sq F value Pr(>F)
+B            4   1064  265.96   1.059  0.408
+A            4    346   86.56   0.345  0.844
+Residuals   16   4018  251.11               
+> aggregate(data$result, by=list(data$A), FUN=mean)
+  Group.1    x
+1       b 16.6
+2       c 24.4
+3       d 14.0
+4       a 22.0
+5       e 18.4
+> aggregate(data$result, by=list(data$B), FUN=mean)
+  Group.1    x
+1      B1 25.6
+2      B2 15.2
+3      B3 12.0
+4      B4 14.4
+5      B5 28.2
+> setwd("/Users/shenbo/workspace/github/R_Application/src/3-4/02")
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> data = rbind(
++ data.frame(result = 42, A = "b", B = "B1"),
++ data.frame(result = 54, A = "c", B = "B1"),
++ data.frame(result = 4, A = "d", B = "B1"),
++ data.frame(result = 15, A = "a", B = "B1"),
++ data.frame(result = 13, A = "e", B = "B1"),
++ data.frame(result = 18, A = "d", B = "B2"),
++ data.frame(result = 4, A = "e", B = "B2"),
++ data.frame(result = 5, A = "c", B = "B2"),
++ data.frame(result = 16, A = "b", B = "B2"),
++ data.frame(result = 33, A = "a", B = "B2"),
++ data.frame(result = 30, A = "e", B = "B3"),
++ data.frame(result = 12, A = "a", B = "B3"),
++ data.frame(result = 2, A = "b", B = "B3"),
++ data.frame(result = 9, A = "c", B = "B3"),
++ data.frame(result = 16, A = "d", B = "B3"),
++ data.frame(result = 6, A = "a", B = "B4"),
++ data.frame(result = 6, A = "b", B = "B4"),
++ data.frame(result = 12, A = "e", B = "B4"),
++ data.frame(result = 14, A = "d", B = "B4"),
++ data.frame(result = 34, A = "c", B = "B4"),
++ data.frame(result = 20, A = "c", B = "B5"),
++ data.frame(result = 18, A = "d", B = "B5"),
++ data.frame(result = 53, A = "a", B = "B5"),
++ data.frame(result = 33, A = "e", B = "B5"),
++ data.frame(result = 17, A = "b", B = "B5")
++ )
+> data
+   result A  B
+1      42 b B1
+2      54 c B1
+3       4 d B1
+4      15 a B1
+5      13 e B1
+6      18 d B2
+7       4 e B2
+8       5 c B2
+9      16 b B2
+10     33 a B2
+11     30 e B3
+12     12 a B3
+13      2 b B3
+14      9 c B3
+15     16 d B3
+16      6 a B4
+17      6 b B4
+18     12 e B4
+19     14 d B4
+20     34 c B4
+21     20 c B5
+22     18 d B5
+23     53 a B5
+24     33 e B5
+25     17 b B5
+> fit = aov(result~B+A, data=data)
+> summary(fit)
+            Df Sum Sq Mean Sq F value Pr(>F)
+B            4    949   237.3   0.985  0.443
+A            4    412   102.9   0.427  0.787
+Residuals   16   3855   240.9               
+> 
+> 
+> 
+> 
+> 
+> 
+> setwd("/Users/shenbo/workspace/github/R_Application/src/3-5")
+> 
+> data = rbind(
++ data.frame(result = 47, A = "c", B = "B1"),
++ data.frame(result = 49, A = "b", B = "B1"),
++ data.frame(result = 28, A = "d", B = "B1"),
++ data.frame(result = 48, A = "a", B = "B1"),
++ 
++ data.frame(result = 40, A = "d", B = "B2"),
++ data.frame(result = 53, A = "a", B = "B2"),
++ data.frame(result = 34, A = "c", B = "B2"),
++ data.frame(result = 44, A = "b", B = "B2"),
++ 
++ data.frame(result = 50, A = "b", B = "B3"),
++ data.frame(result = 37, A = "c", B = "B3"),
++ data.frame(result = 46, A = "b", B = "B3"),
++ data.frame(result = 25, A = "c", B = "B3"),
++ 
++ data.frame(result = 57, A = "a", B = "B4"),
++ data.frame(result = 29, A = "b", B = "B4"),
++ data.frame(result = 37, A = "e", B = "B4"),
++ data.frame(result = 30, A = "d", B = "B4")
++ )
+> data
+   result A  B
+1      47 c B1
+2      49 b B1
+3      28 d B1
+4      48 a B1
+5      40 d B2
+6      53 a B2
+7      34 c B2
+8      44 b B2
+9      50 b B3
+10     37 c B3
+11     46 b B3
+12     25 c B3
+13     57 a B4
+14     29 b B4
+15     37 e B4
+16     30 d B4
+> fit = aov(result~A+B, data=data)
+> summary(fit)
+            Df Sum Sq Mean Sq F value Pr(>F)
+A            4  776.5  194.12   2.695  0.109
+B            3   83.1   27.71   0.385  0.767
+Residuals    8  576.2   72.02               
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> data = rbind(
++ data.frame(result = 47, A = "c", B = "B1"),
++ data.frame(result = 49, A = "b", B = "B1"),
++ data.frame(result = 28, A = "d", B = "B1"),
++ data.frame(result = 48, A = "a", B = "B1"),
++ 
++ data.frame(result = 40, A = "d", B = "B2"),
++ data.frame(result = 53, A = "a", B = "B2"),
++ data.frame(result = 34, A = "c", B = "B2"),
++ data.frame(result = 44, A = "b", B = "B2"),
++ 
++ data.frame(result = 50, A = "b", B = "B3"),
++ data.frame(result = 37, A = "c", B = "B3"),
++ data.frame(result = 46, A = "a", B = "B3"),
++ data.frame(result = 25, A = "d", B = "B3"),
++ 
++ data.frame(result = 57, A = "a", B = "B4"),
++ data.frame(result = 29, A = "d", B = "B4"),
++ data.frame(result = 37, A = "b", B = "B4"),
++ data.frame(result = 30, A = "c", B = "B4")
++ )
+> data
+   result A  B
+1      47 c B1
+2      49 b B1
+3      28 d B1
+4      48 a B1
+5      40 d B2
+6      53 a B2
+7      34 c B2
+8      44 b B2
+9      50 b B3
+10     37 c B3
+11     46 a B3
+12     25 d B3
+13     57 a B4
+14     29 d B4
+15     37 b B4
+16     30 c B4
+> 
+> 
+> fit = aov(data~A+B, data=data)
+Error in model.frame.default(formula = data ~ A + B, data = data, drop.unused.levels = TRUE) : 
+  invalid type (list) for variable 'data'
+> fit = aov(data~result+B, data=data)
+Error in model.frame.default(formula = data ~ result + B, data = data,  : 
+  invalid type (list) for variable 'data'
+> 
+> 
+> 
+> 
+> 
+> 
+> fit = aov(result~A+B, data=data)
+> 
+> summary(fit)
+            Df Sum Sq Mean Sq F value  Pr(>F)   
+A            3  968.7   322.9   7.270 0.00888 **
+B            3   67.3    22.4   0.505 0.68857   
+Residuals    9  399.7    44.4                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> setwd("/Users/shenbo/workspace/github/R_Application/src/3-6")
+> 
+> 
+> 
+> 
+> 
+> setwd("/Users/shenbo/workspace/github/R_Application/src/3-6")
+> data = rbind(
++ data.frame(result = 1.28, A = "A1", B = "B1"),
++ data.frame(result = 1.70, A = "A2", B = "B1"),
++ data.frame(result = 2.09, A = "A3", B = "B1"),
++ 
++ data.frame(result = 1.37, A = "A1", B = "B2"),
++ data.frame(result = 2.22, A = "A2", B = "B2"),
++ data.frame(result = 2.61, A = "A3", B = "B2"),
++ 
++ data.frame(result = 1.47, A = "A1", B = "B3"),
++ data.frame(result = 2.35, A = "A2", B = "B3"),
++ data.frame(result = 2.6, A = "A3", B = "B3"),
++ 
++ data.frame(result = 1.37, A = "A1", B = "B4"),
++ data.frame(result = 1.77, A = "A2", B = "B4"),
++ data.frame(result = 2.36, A = "A3", B = "B4"),
++ 
++ data.frame(result = 1.22, A = "A1", B = "B5"),
++ data.frame(result = 1.81, A = "A2", B = "B5"),
++ data.frame(result = 2.40, A = "A3", B = "B5")
++ )
+> data
+   result  A  B
+1    1.28 A1 B1
+2    1.70 A2 B1
+3    2.09 A3 B1
+4    1.37 A1 B2
+5    2.22 A2 B2
+6    2.61 A3 B2
+7    1.47 A1 B3
+8    2.35 A2 B3
+9    2.60 A3 B3
+10   1.37 A1 B4
+11   1.77 A2 B4
+12   2.36 A3 B4
+13   1.22 A1 B5
+14   1.81 A2 B5
+15   2.40 A3 B5
+> fit = aov(result~A+B, data=data)
+> summary(fit)
+            Df Sum Sq Mean Sq F value   Pr(>F)    
+A            2 2.8911  1.4455  83.767 4.31e-06 ***
+B            4 0.4251  0.1063   6.159   0.0145 *  
+Residuals    8 0.1381  0.0173                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> setwd("/Users/shenbo/workspace/github/R_Application/src/3-7/01")
+> 
+> 
+> 
+> 
+> data = rbind(
++ data.frame(result = 12, A = "A1", B = "B1"),
++ data.frame(result = 8, A = "A2", B = "B1"),
++ data.frame(result = 9, A = "A3", B = "B1"),
++ data.frame(result = 7, A = "A4", B = "B1"),
++ data.frame(result = 5, A = "A5", B = "B1")
++ 
++ data.frame(result = 15, A = "A1", B = "B2"),
+Error: unexpected symbol in:
+"
+data.frame"
+> data.frame(result = 12, A = "A2", B = "B2"),
+Error: unexpected ',' in "data.frame(result = 12, A = "A2", B = "B2"),"
+> data.frame(result = 13, A = "A3", B = "B2"),
+Error: unexpected ',' in "data.frame(result = 13, A = "A3", B = "B2"),"
+> data.frame(result = 13, A = "A4", B = "B2"),
+Error: unexpected ',' in "data.frame(result = 13, A = "A4", B = "B2"),"
+> data.frame(result = 4, A = "A5", B = "B2")
+  result  A  B
+1      4 A5 B2
+> 
+> data.frame(result = 16, A = "A1", B = "B3"),
+Error: unexpected ',' in "data.frame(result = 16, A = "A1", B = "B3"),"
+> data.frame(result = 15, A = "A2", B = "B3"),
+Error: unexpected ',' in "data.frame(result = 15, A = "A2", B = "B3"),"
+> data.frame(result = 6, A = "A3", B = "B3"),
+Error: unexpected ',' in "data.frame(result = 6, A = "A3", B = "B3"),"
+> data.frame(result = 10, A = "A4", B = "B3"),
+Error: unexpected ',' in "data.frame(result = 10, A = "A4", B = "B3"),"
+> data.frame(result = 8, A = "A5", B = "B3")
+  result  A  B
+1      8 A5 B3
+> 
+> data.frame(result = 9, A = "A1", B = "B4"),
+Error: unexpected ',' in "data.frame(result = 9, A = "A1", B = "B4"),"
+> data.frame(result = 9, A = "A2", B = "B4"),
+Error: unexpected ',' in "data.frame(result = 9, A = "A2", B = "B4"),"
+> data.frame(result = 2, A = "A3", B = "B4"),
+Error: unexpected ',' in "data.frame(result = 2, A = "A3", B = "B4"),"
+> data.frame(result = 6, A = "A4", B = "B4"),
+Error: unexpected ',' in "data.frame(result = 6, A = "A4", B = "B4"),"
+> data.frame(result = 11, A = "A5", B = "B4")
+  result  A  B
+1     11 A5 B4
+> )
+Error: unexpected ')' in ")"
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> data = rbind(
++ data.frame(result = 12, A = "A1", B = "B1"),
++ data.frame(result = 8, A = "A2", B = "B1"),
++ data.frame(result = 9, A = "A3", B = "B1"),
++ data.frame(result = 7, A = "A4", B = "B1"),
++ data.frame(result = 5, A = "A5", B = "B1"),
++ 
++ data.frame(result = 15, A = "A1", B = "B2"),
++ data.frame(result = 12, A = "A2", B = "B2"),
++ data.frame(result = 13, A = "A3", B = "B2"),
++ data.frame(result = 13, A = "A4", B = "B2"),
++ data.frame(result = 4, A = "A5", B = "B2"),
++ 
++ data.frame(result = 16, A = "A1", B = "B3"),
++ data.frame(result = 15, A = "A2", B = "B3"),
++ data.frame(result = 6, A = "A3", B = "B3"),
++ data.frame(result = 10, A = "A4", B = "B3"),
++ data.frame(result = 8, A = "A5", B = "B3"),
++ 
++ data.frame(result = 9, A = "A1", B = "B4"),
++ data.frame(result = 9, A = "A2", B = "B4"),
++ data.frame(result = 2, A = "A3", B = "B4"),
++ data.frame(result = 6, A = "A4", B = "B4"),
++ data.frame(result = 11, A = "A5", B = "B4")
++ )
+> 
+> data
+   result  A  B
+1      12 A1 B1
+2       8 A2 B1
+3       9 A3 B1
+4       7 A4 B1
+5       5 A5 B1
+6      15 A1 B2
+7      12 A2 B2
+8      13 A3 B2
+9      13 A4 B2
+10      4 A5 B2
+11     16 A1 B3
+12     15 A2 B3
+13      6 A3 B3
+14     10 A4 B3
+15      8 A5 B3
+16      9 A1 B4
+17      9 A2 B4
+18      2 A3 B4
+19      6 A4 B4
+20     11 A5 B4
+> 
+> 
+> fit = aov(result~A+B, data=data)
+> summary(fit)
+            Df Sum Sq Mean Sq F value Pr(>F)
+A            4  100.0   25.00   2.396  0.108
+B            3   59.8   19.93   1.911  0.182
+Residuals   12  125.2   10.43               
+> 

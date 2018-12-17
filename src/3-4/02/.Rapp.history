@@ -1,0 +1,79 @@
+ls()
+help
+help()
+clear
+ls
+ls()
+ls.str()
+exit
+quit
+quit()
+ls()
+ls.str()
+setwd("/Users/shenbo/workspace/github/R_Application/src/3-4/01")
+ls()
+dir()
+data = rbind(#
+data.frame(result = 42, A = "b", B = "B1"),#
+data.frame(result = 54, A = "c", B = "B1"),#
+data.frame(result = 4, A = "d", B = "B1"),#
+data.frame(result = 15, A = "a", B = "B1"),#
+data.frame(result = 13, A = "e", B = "B1"),#
+data.frame(result = 18, A = "d", B = "B2"),#
+data.frame(result = 4, A = "e", B = "B2"),#
+data.frame(result = 5, A = "c", B = "B2"),#
+data.frame(result = 16, A = "b", B = "B2"),#
+data.frame(result = 33, A = "a", B = "B2"),#
+data.frame(result = 30, A = "e", B = "B3"),#
+data.frame(result = 3, A = "a", B = "B3"),#
+data.frame(result = 2, A = "b", B = "B3"),#
+data.frame(result = 9, A = "c", B = "B3"),#
+data.frame(result = 16, A = "d", B = "B3"),#
+data.frame(result = 6, A = "a", B = "B4"),#
+data.frame(result = 6, A = "b", B = "B4"),#
+data.frame(result = 12, A = "e", B = "B4"),#
+data.frame(result = 14, A = "d", B = "B4"),#
+data.frame(result = 34, A = "c", B = "B4"),#
+data.frame(result = 20, A = "c", B = "B5"),#
+data.frame(result = 18, A = "d", B = "B5"),#
+data.frame(result = 53, A = "a", B = "B5"),#
+data.frame(result = 33, A = "e", B = "B5"),#
+data.frame(result = 17, A = "b", B = "B5")#
+)
+ls.str()
+data
+fit = aov(result~B+A, data=data)
+summary(fit)
+aggregate(data$result, by=list(data$A), FUN=mean)
+aggregate(data$result, by=list(data$B), FUN=mean)
+setwd("/Users/shenbo/workspace/github/R_Application/src/3-4/02")
+data = rbind(#
+data.frame(result = 42, A = "b", B = "B1"),#
+data.frame(result = 54, A = "c", B = "B1"),#
+data.frame(result = 4, A = "d", B = "B1"),#
+data.frame(result = 15, A = "a", B = "B1"),#
+data.frame(result = 13, A = "e", B = "B1"),#
+data.frame(result = 18, A = "d", B = "B2"),#
+data.frame(result = 4, A = "e", B = "B2"),#
+data.frame(result = 5, A = "c", B = "B2"),#
+data.frame(result = 16, A = "b", B = "B2"),#
+data.frame(result = 33, A = "a", B = "B2"),#
+data.frame(result = 30, A = "e", B = "B3"),#
+data.frame(result = 12, A = "a", B = "B3"),#
+data.frame(result = 2, A = "b", B = "B3"),#
+data.frame(result = 9, A = "c", B = "B3"),#
+data.frame(result = 16, A = "d", B = "B3"),#
+data.frame(result = 6, A = "a", B = "B4"),#
+data.frame(result = 6, A = "b", B = "B4"),#
+data.frame(result = 12, A = "e", B = "B4"),#
+data.frame(result = 14, A = "d", B = "B4"),#
+data.frame(result = 34, A = "c", B = "B4"),#
+data.frame(result = 20, A = "c", B = "B5"),#
+data.frame(result = 18, A = "d", B = "B5"),#
+data.frame(result = 53, A = "a", B = "B5"),#
+data.frame(result = 33, A = "e", B = "B5"),#
+data.frame(result = 17, A = "b", B = "B5")#
+)
+data
+fit = aov(result~B+A, data=data)
+summary(fit)

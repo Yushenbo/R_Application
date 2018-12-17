@@ -1,0 +1,21 @@
+data = rbind(
+data.frame(result = 1.28, A = "A1", B = "B1"),
+data.frame(result = 1.70, A = "A2", B = "B1"),
+data.frame(result = 2.09, A = "A3", B = "B1"),
+
+data.frame(result = 1.37, A = "A1", B = "B2"),
+data.frame(result = 2.22, A = "A2", B = "B2"),
+data.frame(result = 2.61, A = "A3", B = "B2")
+
+data.frame(result = 1.47, A = "A1", B = "B3"),
+data.frame(result = 2.35, A = "A2", B = "B3"),
+data.frame(result = 2.6, A = "A3", B = "B3"),
+
+data.frame(result = 1.37, A = "A1", B = "B4"),
+data.frame(result = 1.77, A = "A2", B = "B4"),
+data.frame(result = 2.36, A = "A3", B = "B4"),
+
+data.frame(result = 1.22, A = "A1", B = "B5"),
+data.frame(result = 1.81, A = "A2", B = "B5"),
+data.frame(result = 2.40, A = "A3", B = "B5")
+)
